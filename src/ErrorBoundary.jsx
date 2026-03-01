@@ -4,7 +4,7 @@ import maintenanceImage from './assets/maintenance.png'
 class ErrorBoundary extends Component {
   constructor(props) {
     super(props)
-    this.state = { hasError: true }
+    this.state = { hasError: false}
   }
 
   static getDerivedStateFromError() {
@@ -18,18 +18,16 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{ textAlign: 'center', padding: '2rem' }}>
-            <img src={maintenanceImage} style={{ maxWidth: '150px'}}/>
+        <div style={{width: "100vw", textAlign: 'center' }}>
+          <img src={maintenanceImage} style={{ maxWidth: '150px'}}/>
           <h1>Webpage under maintenance</h1>
-          <p>Revamping my portfolio page. Pls check out my linkedin instead!
-          </p>
-          <a
-            href="https://www.linkedin.com/in/euzhengxi/"
+          <p>Revamping my portfolio page. Pls check out my linkedin instead!</p>
+
+          <a href="https://www.linkedin.com/in/euzhengxi/"
             target="_blank"
-            rel="noreferrer"
-            >
+            rel="noreferrer" >
             https://www.linkedin.com/in/euzhengxi/
-            </a>
+          </a>
         </div>
       )
     }
