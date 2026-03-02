@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 
 
 import pa25i1 from './assets/mobile.png'
-import pa25i2 from './assets/inference.png'
 import pa24i1 from './assets/SIM1.png'
 import pa24i2 from './assets/SIM2.png'
 
@@ -24,7 +23,7 @@ const projects = [
   {
     id: 2,
     date: "July 2025",
-    projectLink: '',
+    projectLink: 'https://github.com/euzhengxi/rlhf',
     title: "Reinforcement Learning using Human Feedback undergraduate Research",
     details: "This is a undergraduate research on Reinforcement Learning using Human Feedback (RLHF). Current RLHF literature focuses mainly on ratings and preferences, which may not be readily available. Natural language responses are in abundance but they tend to be noisy. To circumvent this issue, I propose complementing the reward function with the agent's understanding of the environment. Unlike usual model based approaches that creates a reward function, this model aims to capture the context of the task and dynamics of the environment and represents this in the latent space. These latent vectors are treated as proxies for logic, which are trained using the JEPA architecture.",
     implementation: "Human feedback is simulated using cached LLM responses. The dynamics of the environment is captured using a custom feature extractor and the model is trained using the PPO algorithm using TorchRL in the Minigrid environment. Unfortunately, the results of the research is unable to prove my hypothesis.",
@@ -156,7 +155,7 @@ export default function ML() {
                 <div style={styles.right}>
                   <div style={{display:'flex', flexDirection:"row", alignItems:"center"}}>
                     <p style={{marginRight: "0.5rem"}}>{projects[currentIndex].title}</p>
-                    <a href={projects[currentIndex].projectLink} target="_blank" rel="noreferrer" > (Link)</a> 
+                    {projects[currentIndex].projectLink && <a href={projects[currentIndex].projectLink} target="_blank" rel="noreferrer" > (Link) </a> }
                   </div>
                   
 

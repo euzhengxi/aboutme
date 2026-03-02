@@ -22,7 +22,7 @@ export default function SideProjects() {
             title: 'Payment API',
             desc: 'Production ready backend API system',
             route: "https://github.com/euzhengxi/payment_api",
-            tech: ['Python', 'RESTful API', 'Multithreading', 'Event driven architecture', 'Micro-services', 'failsafe'],
+            tech: ['Python', 'RESTful API', 'Multithreading', 'Microservices', 'Event driven architecture', 'ACID', 'Failover','Unit test'],
             longDesc:'This is a simplified payment api modeled after modern payment systems (like Stripe). Users can create accounts and initiate payments using a client interface. In the event transaction issues arise, the automatic reattempt mechanism helps to ensure that one time issues are dealt with effectively. As each component is implemented as a micro service, monitoring and maintenance are greatly simplified. The adoption of event driven architecture (for side effects like notifications) further improves the overall efficiency of the system. As this is a project designed to mimic real world systems, additional details like scalability and failsafe mechanisms were also considered and implemented in project.',
             image: architecture,
         },
