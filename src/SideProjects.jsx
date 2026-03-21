@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
-import architecture from './assets/architecture.png'
+import neuro_architecture from './assets/neuro_architecture.png'
+import api_architecture from './assets/api_architecture.png'
+
 
 export default function SideProjects() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -13,10 +15,18 @@ export default function SideProjects() {
         {
             title: 'LLM Content Generator',
             desc: 'Coming soon!',
-            route: "https://github.com/euzhengxi/LLM_Content_Generation",
+            route: "https://github.com/euzhengxi/LLM/tree/main/content_generator",
             tech: ['RAG', 'LangChain', 'VectorDB'],
             longDesc: 'This is an ongoing project that explores the use of LLM in content generation, assisted by RAG and LangChain.',
             image: ""
+        },
+        {
+            title: 'Neuro-symbolic pipeline using LLM',
+            desc: 'A neuro-symbolic pipeline that uses external validators and LLM as a judge!',
+            route: "https://github.com/euzhengxi/LLM/tree/main/neuro_symbolic",
+            tech: ['Fast Downward', 'INVAL', 'PDDL', 'LLM as a judge', 'Chain of Thought'],
+            longDesc: 'This is a neuro-symbolic pipeline that converts natural language problem descriptions into syntactically and semantically correct planning problems. The system adopts a 2 pronged approach to iteratively refine itself: LLM-based generation (LLM as a judge) & symbolic validation and verification. This pipeline is developed after reviewing papers including PlanBench, TIC: Translate-Infer-Compile, Chain-of-Thought Prompting, Teaching LLMs to Plan: Logical Chain-of-Thought, SELF_REFINE etc',
+            image: neuro_architecture
         },
         {
             title: 'Payment API',
@@ -24,7 +34,7 @@ export default function SideProjects() {
             route: "https://github.com/euzhengxi/payment_api",
             tech: ['Python', 'RESTful API', 'Multithreading', 'Microservices', 'Event driven architecture', 'ACID', 'Failover','Unit test'],
             longDesc:'This is a simplified payment api modeled after modern payment systems (like Stripe). Users can create accounts and initiate payments using a client interface. In the event transaction issues arise, the automatic reattempt mechanism helps to ensure that one time issues are dealt with effectively. As each component is implemented as a micro service, monitoring and maintenance are greatly simplified. The adoption of event driven architecture (for side effects like notifications) further improves the overall efficiency of the system. As this is a project designed to mimic real world systems, additional details like scalability and failsafe mechanisms were also considered and implemented in project.',
-            image: architecture,
+            image: api_architecture,
         },
         
     ];
